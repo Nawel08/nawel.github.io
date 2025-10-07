@@ -4,58 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nawel ZAIT — Portfolio</title>
-
-  <!-- Font: Space Grotesk -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
   <style>
-    /* RESET */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
       font-family: 'Space Grotesk', sans-serif;
       background-color: #0a0f1c;
       color: #e2e6ec;
-      line-height: 1.7;
+      line-height: 1.6;
       font-size: 16px;
       scroll-behavior: smooth;
     }
-
     a {
       color: #59aaff;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
     }
-
     a:hover {
       color: #87c4ff;
     }
-
-    /* HEADER */
     header {
       padding: 100px 20px 40px;
       text-align: center;
       background: linear-gradient(to right, #0a0f1c, #0f1a2c);
       border-bottom: 1px solid #1a2233;
     }
-
     header h1 {
       font-size: 3rem;
       font-weight: 700;
-      color: #ffffff;
       margin-bottom: 10px;
-      letter-spacing: 0.5px;
+      color: #ffffff;
     }
-
     .subtitle {
       font-size: 1.1rem;
       color: #9fb4d1;
     }
-
     .intro {
       font-size: 1rem;
       margin-top: 20px;
@@ -64,15 +47,12 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* SECTION */
     section {
       max-width: 1000px;
-      margin: 100px auto;
+      margin: 80px auto;
       padding: 0 20px;
       position: relative;
     }
-
     section::before {
       content: "";
       position: absolute;
@@ -82,7 +62,6 @@
       height: 1px;
       background-color: #1b2333;
     }
-
     h2 {
       font-size: 1.5rem;
       font-weight: 600;
@@ -91,14 +70,11 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-
-    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-
     .card {
       background-color: #101622;
       border: 1px solid #1c2536;
@@ -106,37 +82,41 @@
       padding: 24px;
       transition: all 0.3s ease;
     }
-
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
-
     .card h3 {
       font-size: 1.15rem;
       font-weight: 600;
-      color: #DFEBF5;
+      color: #73baff;
       margin-bottom: 10px;
     }
-
     .card p {
       font-size: 0.95rem;
-      color: #DFEBF5;
+      color: #c3c9d6;
       line-height: 1.6;
     }
-
-    /* AI Agent Box */
-    .ai-agent {
-      background: #0f1624;
+    .about-me {
+      background-color: #0f1624;
       border-left: 4px solid #3a91ff;
       padding: 30px 24px;
-      margin-top: 60px;
       border-radius: 10px;
-      font-style: normal;
-      color: #b0b9c6;
     }
-
-    /* FOOTER */
+    .readings {
+      list-style: none;
+      padding-left: 0;
+    }
+    .readings li {
+      margin-bottom: 12px;
+    }
+    .contact {
+      background-color: #10161f;
+      border-left: 4px solid #59aaff;
+      padding: 30px 24px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
     footer {
       text-align: center;
       padding: 50px 0 30px;
@@ -145,6 +125,55 @@
       border-top: 1px solid #1a2230;
       margin-top: 100px;
     }
+    /* Chatbot styles */
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      max-height: 500px;
+      background-color: #111820;
+      border: 1px solid #1f2530;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    #chatbot-header {
+      background-color: #1a2330;
+      padding: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      color: #d0d6e0;
+    }
+    #chatbot-input {
+      border-top: 1px solid #1f2530;
+      padding: 8px;
+      display: flex;
+    }
+    #chatbot-input input {
+      flex: 1;
+      background: #141b27;
+      border: none;
+      padding: 8px;
+      color: #e0e6f0;
+    }
+    #chatbot-input button {
+      background: #59aaff;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -152,31 +181,36 @@
 
   <header>
     <h1>Nawel ZAIT</h1>
-    <p class="subtitle">Artificial intelligence & Data  — Institut Polytechnique de Paris</p>
-    <p class="intro">Final-year master's student seeking a 6-month internship and full-time role in Artificial Intelligence, Machine Learning, or Data Science.</p>
+    <p class="subtitle">AI & Data Science — Institut Polytechnique de Paris</p>
+    <p class="intro">Final-year master's student seeking a 6‑month internship or full-time position in AI, Machine Learning, or Data Science.</p>
   </header>
+
+  <section class="about-me">
+    <h2>About Me</h2>
+    <p>Hello! I’m a passionate AI & Data Scientist in training. I enjoy building models, exploring interdisciplinary topics like neuroscience & cryptology, and bridging theory with real-world applications. Always eager to learn and collaborate.</p>
+  </section>
 
   <section>
     <h2>Selected Academic Projects</h2>
     <div class="projects">
       <div class="card">
         <h3>SLM Fine-Tuning for Medical Text Summarization</h3>
-        <p>Trained a small language model to summarize French medical documents using synthetic data from LLMs. Focused on semantic fidelity and domain-specific accuracy.</p>
+        <p>Trained a small language model to summarize French medical texts with synthetic data. Focused on semantic fidelity and domain-specific accuracy.</p>
         <p><a href="https://github.com/ineszait/medical-text-summarization" target="_blank">View on GitHub →</a></p>
       </div>
       <div class="card">
         <h3>Sub-Event Detection in FIFA World Cup Tweets</h3>
-        <p>Developed ML classifiers to detect real-time events like goals and red cards using GloVe embeddings and temporal segmentation.</p>
+        <p>Built ML models to detect goals, red cards from live tweet streams using embeddings and temporal segmentation.</p>
         <p><a href="https://github.com/ineszait/fifa-subevent-detection" target="_blank">View on GitHub →</a></p>
       </div>
       <div class="card">
         <h3>Text-to-SQL using Language Models</h3>
-        <p>Used prompt engineering to translate natural language to SQL. Benchmarked rule-based and LLM methods for structured querying.</p>
+        <p>Used prompt engineering to convert natural language queries into SQL, and compared with rule-based methods.</p>
         <p><a href="https://github.com/ineszait/text-to-sql" target="_blank">View on GitHub →</a></p>
       </div>
       <div class="card">
         <h3>Reinforcement Learning for Quoridor AI</h3>
-        <p>Built intelligent agents using Minimax and Monte Carlo Tree Search. Introduced heuristics for obstruction and strategic planning.</p>
+        <p>Created intelligent agents using Minimax + MCTS with heuristics to improve decision-making and path-blocking logic.</p>
         <p><a href="https://github.com/ineszait/quoridor-ai" target="_blank">View on GitHub →</a></p>
       </div>
     </div>
@@ -186,21 +220,88 @@
     <h2>Research Projects</h2>
     <div class="projects">
       <div class="card">
-        <h3>Neural Modeling of Screen-Induced Health Disruptions</h3>
-        <p>Bridged neuroscience and AI by predicting stress and cognitive changes from screen exposure using Neural ODEs, LSTMs, and GRUs on GLOBEM time-series data.</p>
+        <h3>Neural Modeling of Screen‑Induced Health Disruptions</h3>
+        <p>Combined neuroscience & AI by modeling effects of screen overexposure using Neural ODEs, LSTM, GRU on time-series data from GLOBEM.</p>
         <p><a href="https://github.com/ineszait/screen-exposure-modeling" target="_blank">View on GitHub →</a></p>
       </div>
       <div class="card">
         <h3>Adversarial Learning for Cryptographic Protocols</h3>
-        <p>Applied adversarial techniques to evaluate the robustness of cryptographic protocols. Designed adaptive attacks to uncover structural weaknesses.</p>
+        <p>Applied adversarial ML to probe cryptographic protocol resilience—designed adaptive attacks to reveal weaknesses.</p>
         <p><a href="#" target="_blank">Coming soon</a></p>
       </div>
     </div>
   </section>
 
+  <section>
+    <h2>Notable Readings</h2>
+    <ul class="readings">
+      <li><a href="https://arxiv.org/abs/2305.19927" target="_blank">“A Survey of Transformer Models in NLP”</a></li>
+      <li><a href="https://www.sciencedirect.com/science/article/pii/S0893608023003275" target="_blank">“Deep Learning in Computer Vision: Recent Advances”</a></li>
+      <li><a href="https://www.jmlr.org/papers/v21/19-502.html" target="_blank">“Graph Neural Networks: A Review”</a></li>
+      <li><a href="https://link.springer.com/article/10.1007/s11222-022-10159-3" target="_blank">“Privacy-Preserving Machine Learning Techniques”</a></li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>You can reach me via email: <a href="mailto:ton.email@example.com">ton.email@example.com</a></p>
+    <p>Or connect on <a href="https://www.linkedin.com/in/tonprofil" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <section id="chatbot-container">
+    <div id="chatbot-header">Chat with me</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Ask me something..." />
+      <button id="chatbot-send">Send</button>
+    </div>
+  </section>
+
   <footer>
-    © Nawel ZAIT · 2025 — All rights reserved.
+    © Nawel ZAIT · 2025
   </footer>
+
+  <script>
+    // Chatbot logic (placeholder). Remplace avec ton backend ou API.
+    const header = document.getElementById('chatbot-header');
+    const messagesDiv = document.getElementById('chatbot-messages');
+    const inputEl = document.getElementById('chatbot-text');
+    const sendBtn = document.getElementById('chatbot-send');
+
+    let open = true;
+    header.onclick = () => {
+      open = !open;
+      document.getElementById('chatbot-container').style.height = open ? '400px' : '40px';
+    };
+
+    sendBtn.onclick = async () => {
+      const text = inputEl.value.trim();
+      if (!text) return;
+      // afficher ton texte
+      const userMsg = document.createElement('div');
+      userMsg.textContent = "You: " + text;
+      messagesDiv.appendChild(userMsg);
+      inputEl.value = '';
+      // placeholder réponse
+      const botMsg = document.createElement('div');
+      botMsg.textContent = "Bot: Thinking...";
+      messagesDiv.appendChild(botMsg);
+      // ici tu ferais fetch vers ton API, ex :
+      /*
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      botMsg.textContent = "Bot: " + data.response;
+      */
+      // demo : après 1s, réponse fixe
+      setTimeout(() => {
+        botMsg.textContent = "Bot: Hello! I'm under development.";
+      }, 1000);
+    };
+  </script>
 
 </body>
 </html>

@@ -5,106 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nawel ZAIT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0c0f14;
-    color: #e0e0e0;
-    line-height: 1.7;
-    padding-bottom: 100px;
-  }
-
-  a {
-    color: #7aa9ff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  header {
-    text-align: center;
-    padding: 100px 20px 60px;
-  }
-
-  h1 {
-    font-size: 2.5em;
-    font-weight: 600;
-  }
-
-  .subtitle {
-    font-size: 1.2em;
-    color: #aabbd4;
-    margin-top: 10px;
-  }
-
-  .intro {
-    color: #b0b9cc;
-    margin-top: 20px;
-    font-size: 1em;
-  }
-
-  section {
-    max-width: 880px;
-    margin: auto;
-    padding: 60px 20px;
-  }
-
-  h2 {
-    font-size: 1.6em;
-    font-weight: 500;
-    color: #7aa9ff;
-    text-align: left;
-    margin-bottom: 32px;
-  }
-
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  @media (min-width: 700px) {
-    .projects {
-      grid-template-columns: 1fr 1fr;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
-
-  .card {
-    background: #11151f;
-    padding: 20px 24px;
-    border-radius: 10px;
-    border: 1px solid #1e2738;
-  }
-
-  .card h3 {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #7aa9ff;
-    margin-bottom: 8px;
-  }
-
-  .card p {
-    font-size: 0.95em;
-    color: #c4c7cc;
-    margin-bottom: 10px;
-  }
-
-  footer {
-    text-align: center;
-    color: #7a889f;
-    font-size: 0.9em;
-    padding: 40px 0 20px;
-  }
-</style>
-
+  
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c0f14;
+      color: #e0e0e0;
+      line-height: 1.7;
+      padding-bottom: 100px;
+    }
+  
+    a {
+      color: #7aa9ff;
+      text-decoration: none;
+    }
+  
+    a:hover {
+      text-decoration: underline;
+    }
+  
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+  
+    h1 {
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+  
+    .subtitle {
+      font-size: 1.2em;
+      color: #aabbd4;
+      margin-top: 10px;
+    }
+  
+    .intro {
+      color: #b0b9cc;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+  
+    section {
+      max-width: 880px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+  
+    h2 {
+      font-size: 1.6em;
+      font-weight: 500;
+      color: #7aa9ff;
+      text-align: left;
+      margin-bottom: 32px;
+    }
+  
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    @media (min-width: 700px) {
+      .projects {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  
+    .card {
+      background: #11151f;
+      padding: 20px 24px;
+      border-radius: 10px;
+      border: 1px solid #1e2738;
+    }
+  
+    .card h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #7aa9ff;
+      margin-bottom: 8px;
+    }
+  
+    .card p {
+      font-size: 0.95em;
+      color: #c4c7cc;
+      margin-bottom: 10px;
+    }
+  
+    footer {
+      text-align: center;
+      color: #7a889f;
+      font-size: 0.9em;
+      padding: 40px 0 20px;
+    }
+  </style>
 </head>
 <header>
   <h1>Nawel ZAIT</h1>
@@ -117,7 +116,7 @@
   <div class="projects">
 
     <div class="card">
-      <h3>Medical Text Summarization with Language Models</h3>
+      <h3>Fine-Tuning a Small Language Model for Medical Text Summarization</h3>
       <p>Fine-tuned a small language model to summarize French medical documents. Used synthetic data from LLMs and focused on semantic accuracy.</p>
       <p><a href="https://github.com/ineszait/medical-text-summarization" target="_blank">View on GitHub →</a></p>
     </div>
@@ -149,13 +148,13 @@
 
     <div class="card">
       <h3>Neural Modeling of Screen-Induced Health Disruptions</h3>
-      <p>Used Neural ODEs, LSTM, GRU to model the impact of screen exposure on stress, sleep, and cognition using GLOBEM time-series data.</p>
+      <p>Combined neuroscience insights and AI by developing Neural ODEs, LSTM, and GRU models to predict how excessive screen time affects stress, sleep, attention, and cognitive functions. Utilized time-series data from the GLOBEM dataset.</p>
       <p><a href="https://github.com/ineszait/screen-exposure-modeling" target="_blank">View on GitHub →</a></p>
     </div>
 
     <div class="card">
-      <h3>Cryptographic Diffusion Study</h3>
-      <p>Studied diffusion properties in block ciphers via bit-level propagation experiments.</p>
+      <h3>Adversarial Learning for Cryptographic Protocol Analysis</h3>
+      <p>Applied adversarial machine learning to test the resilience of cryptographic protocols, generating adaptive attack strategies to uncover protocol weaknesses and improve security evaluation.</p>
       <p><a href="#" target="_blank">Coming soon</a></p>
     </div>
 

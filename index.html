@@ -5,164 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nawel ZAIT</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* ======== RESET ======== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* ======== GENERAL ======== */
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0f1a;
-      color: #e6e6e6;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    a { color: #5ab9ea; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0c0f14;
+    color: #e0e0e0;
+    line-height: 1.7;
+    padding-bottom: 100px;
+  }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.7s ease-out;
-    }
+  a {
+    color: #7aa9ff;
+    text-decoration: none;
+  }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    h1, h2, h3 {
-      font-weight: 600;
-      color: #ffffff;
-    }
+  header {
+    text-align: center;
+    padding: 100px 20px 60px;
+  }
 
-    /* ======== HEADER ======== */
-    header {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: radial-gradient(circle at top, #16213e 0%, #0b0f1a 80%);
-    }
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+  }
 
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 15px;
-    }
+  .subtitle {
+    font-size: 1.2em;
+    color: #aabbd4;
+    margin-top: 10px;
+  }
 
-    .subtitle {
-      font-size: 1.2em;
-      color: #9bb1d4;
-    }
+  .intro {
+    color: #b0b9cc;
+    margin-top: 20px;
+    font-size: 1em;
+  }
 
-    /* ======== SECTIONS ======== */
-    h2 {
-      text-align: center;
-      font-size: 1.8em;
-      margin-bottom: 40px;
-      color: #73a5ff;
-    }
+  section {
+    max-width: 880px;
+    margin: auto;
+    padding: 60px 20px;
+  }
 
-    p {
-      max-width: 800px;
-      margin: 10px auto;
-      font-size: 1.05em;
-      text-align: center;
-      color: #d0d3da;
-    }
+  h2 {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #7aa9ff;
+    text-align: left;
+    margin-bottom: 32px;
+  }
 
-    /* ======== PROJECT CARDS ======== */
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @media (min-width: 700px) {
     .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      grid-template-columns: 1fr 1fr;
     }
+  }
 
-    .card {
-      background: #121826;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+  .card {
+    background: #11151f;
+    padding: 20px 24px;
+    border-radius: 10px;
+    border: 1px solid #1e2738;
+  }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
+  .card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #7aa9ff;
+    margin-bottom: 8px;
+  }
 
-    .card h3 {
-      color: #5ab9ea;
-      margin-bottom: 10px;
-    }
+  .card p {
+    font-size: 0.95em;
+    color: #c4c7cc;
+    margin-bottom: 10px;
+  }
 
-    .card p {
-      font-size: 0.95em;
-      color: #c7c9cf;
-    }
+  footer {
+    text-align: center;
+    color: #7a889f;
+    font-size: 0.9em;
+    padding: 40px 0 20px;
+  }
+</style>
 
-    /* ======== CONTACT ======== */
-    .contact {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      color: #9bb1d4;
-      font-size: 0.9em;
-      border-top: 1px solid #1e2537;
-      margin-top: 80px;
-    }
-  </style>
 </head>
+<header>
+  <h1>Nawel ZAIT</h1>
+  <p class="subtitle">AI & Data Science – Institut Polytechnique de Paris</p>
+  <p class="intro">Final-year master's student seeking a 6-month internship and full-time position in AI, ML, or Data Science.</p>
+</header>
 
-<body>
-  <header>
-    <h1>Nawel ZAIT</h1>
-    <p class="subtitle">AI & Data Science – Institut Polytechnique de Paris</p>
-    <p style="margin-top:20px; color:#b0b9cc;">
-     Final-year master's student seeking a 6-month internship and full-time position in AI, ML, or Data Science.
-    </p>
-  </header>
-<h2>Selected Academic Projects</h2>
-<div class="projects">
+<section>
+  <h2>Selected Academic Projects</h2>
+  <div class="projects">
 
-  <div class="card">
-    <h3>Medical Text Summarization with Language Models</h3>
-    <p>Fine-tuned a small language model to summarize French medical documents. Built a corpus of 5,000 texts and generated synthetic summaries using LLMs. Focused on semantic accuracy and terminology handling.</p>
-    <p><a href="https://github.com/ineszait/medical-text-summarization" target="_blank">View on GitHub →</a></p>
+    <div class="card">
+      <h3>Medical Text Summarization with Language Models</h3>
+      <p>Fine-tuned a small language model to summarize French medical documents. Used synthetic data from LLMs and focused on semantic accuracy.</p>
+      <p><a href="https://github.com/ineszait/medical-text-summarization" target="_blank">View on GitHub →</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Content-Based Image Retrieval with Bag-of-Features</h3>
+      <p>Built a CBIR pipeline with DAISY, BRIEF, VGG16, and K-Means. Used cosine similarity to retrieve images based on visual content.</p>
+      <p><a href="https://github.com/ineszait/cbir-bag-of-features" target="_blank">View on GitHub →</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Sub-Event Detection in FIFA World Cup Tweets</h3>
+      <p>Developed ML models to detect sub-events (goals, red cards) from live tweets using GloVe embeddings and logistic regression.</p>
+      <p><a href="https://github.com/ineszait/fifa-subevent-detection" target="_blank">View on GitHub →</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Text-to-SQL using Language Models</h3>
+      <p>Prompt-engineered LLMs to convert natural language into SQL. Compared rule-based and neural approaches for structured data querying.</p>
+      <p><a href="https://github.com/ineszait/text-to-sql" target="_blank">View on GitHub →</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Reinforcement Learning for Quoridor AI</h3>
+      <p>Built RL agents with Minimax and MCTS. Introduced path-obstruction heuristics to enhance gameplay strategy.</p>
+      <p><a href="https://github.com/ineszait/quoridor-ai" target="_blank">View on GitHub →</a></p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h3>Content-Based Image Retrieval with Bag-of-Features</h3>
-    <p>Built a full CBIR pipeline using local/global visual descriptors (DAISY, BRIEF, VGG16), K-Means clustering, and cosine similarity. Compared multiple methods to optimize retrieval performance.</p>
-    <p><a href="https://github.com/ineszait/cbir-bag-of-features" target="_blank">View on GitHub →</a></p>
-  </div>
-
-  <div class="card">
-    <h3>Sub-Event Detection in FIFA World Cup Tweets</h3>
-    <p>Developed ML models to detect sub-events (goals, red cards) from live tweet streams using logistic regression and GloVe embeddings. Focused on temporal segmentation and text classification accuracy.</p>
-    <p><a href="https://github.com/ineszait/fifa-subevent-detection" target="_blank">View on GitHub →</a></p>
-  </div>
-
-  <div class="card">
-    <h3>Text-to-SQL using Language Models</h3>
-    <p>Explored prompt engineering techniques to translate natural language into SQL queries. Compared rule-based and LLM approaches for query accuracy and adaptability to structured data domains.</p>
-    <p><a href="https://github.com/ineszait/text-to-sql" target="_blank">View on GitHub →</a></p>
-  </div>
-
-  <div class="card">
-    <h3>Reinforcement Learning for Quoridor AI</h3>
-    <p>Developed RL agents for the game Quoridor using Minimax and Monte Carlo Tree Search. Introduced a path obstruction heuristic to improve strategic decision-making and gameplay efficiency.</p>
-    <p><a href="https://github.com/ineszait/quoridor-ai" target="_blank">View on GitHub →</a></p>
-  </div>
-
-</div>
+</section>
 
 <section id="research">
   <h2>Research Projects</h2>
@@ -170,49 +157,19 @@
 
     <div class="card">
       <h3>Neural Modeling of Screen-Induced Health Disruptions</h3>
-      <p>Developed neural models (Neural ODEs, LSTM, GRU) to predict the psychological and physiological effects of screen overexposure using time-series data from GLOBEM. Focused on stress, attention, sleep, and social isolation.</p>
+      <p>Used Neural ODEs, LSTM, GRU to model the impact of screen exposure on stress, sleep, and cognition using GLOBEM time-series data.</p>
       <p><a href="https://github.com/ineszait/screen-exposure-modeling" target="_blank">View on GitHub →</a></p>
     </div>
 
     <div class="card">
-      <h3>🔭 Cryptographic Diffusion Study</h3>
-      <p>Experimental study of diffusion properties in block cipher algorithms using bit-level propagation analysis.</p>
+      <h3>Cryptographic Diffusion Study</h3>
+      <p>Studied diffusion properties in block ciphers via bit-level propagation experiments.</p>
       <p><a href="#" target="_blank">Coming soon</a></p>
     </div>
-
 
   </div>
 </section>
 
-
-  <section id="contact">
-    <h2>📬 Contact</h2>
-    <div class="contact">
-      <p>📧 <a href="mailto:ines.zait@polytechnique.edu">ines.zait@polytechnique.edu</a></p>
-      <p>💼 <a href="https://www.linkedin.com/in/ines-zait/" target="_blank">LinkedIn</a> &nbsp; | &nbsp;
-      💻 <a href="https://github.com/ineszait" target="_blank">GitHub</a></p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Inès Zaït — Portfolio personnel
-  </footer>
-
-  <script>
-    // Animation d'apparition fluide au défilement
-    const sections = document.querySelectorAll("section");
-    const options = { threshold: 0.2 };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-</body>
-</html>
+<footer>
+  © Nawel ZAIT · 2025
+</footer>

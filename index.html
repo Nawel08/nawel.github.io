@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nawel ZAIT — Website</title>
-  
-  <!-- Font: Satoshi (elegant, modern, refined) -->
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  
+  <title>Nawel ZAIT — Portfolio</title>
+
+  <!-- Font: Space Grotesk -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     /* RESET */
     *, *::before, *::after {
@@ -16,64 +16,59 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Satoshi', sans-serif;
-      background-color: #062E2E;
-      color: #d0d6e0;
+    html, body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #0a0f1c;
+      color: #e2e6ec;
       line-height: 1.7;
       font-size: 16px;
       scroll-behavior: smooth;
     }
 
     a {
-      color: #4ea0f3;
+      color: #59aaff;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     a:hover {
-      color: #77b6ff;
+      color: #87c4ff;
     }
 
+    /* HEADER */
     header {
       padding: 100px 20px 40px;
       text-align: center;
-      position: relative;
+      background: linear-gradient(to right, #0a0f1c, #0f1a2c);
+      border-bottom: 1px solid #1a2233;
     }
 
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 2px;
-      background: linear-gradient(to right, #1f6feb, #3fb6ff);
-      margin-top: 20px;
-    }
-
-    h1 {
-      font-size: 2.8rem;
+    header h1 {
+      font-size: 3rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 10px;
+      letter-spacing: 0.5px;
     }
 
     .subtitle {
-      font-size: 1.2rem;
-      color: #9db2ce;
+      font-size: 1.1rem;
+      color: #9fb4d1;
     }
 
     .intro {
       font-size: 1rem;
       margin-top: 20px;
-      color: #a7b3c8;
+      color: #b4c3d9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
+    /* SECTION */
     section {
-      max-width: 900px;
-      margin: 80px auto;
+      max-width: 1000px;
+      margin: 100px auto;
       padding: 0 20px;
       position: relative;
     }
@@ -81,22 +76,23 @@
     section::before {
       content: "";
       position: absolute;
-      top: -40px;
+      top: -60px;
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: #1b1f27;
+      background-color: #1b2333;
     }
 
     h2 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 600;
-      color: #EDEBEB;
+      color: #f5f5f5;
       margin-bottom: 40px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
+    /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -104,50 +100,50 @@
     }
 
     .card {
-      background-color: #11161e;
-      border: 1px solid #1d232f;
-      border-radius: 10px;
+      background-color: #101622;
+      border: 1px solid #1c2536;
+      border-radius: 12px;
       padding: 24px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
     .card h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      color: #77b6ff;
+      color: #73baff;
       margin-bottom: 10px;
     }
 
     .card p {
       font-size: 0.95rem;
-      color: #c4c9d4;
+      color: #c3c9d6;
       line-height: 1.6;
     }
 
-    footer {
-      text-align: center;
-      padding: 60px 0 30px;
-      font-size: 0.9rem;
-      color: #6f7a8b;
-      border-top: 1px solid #1c222f;
-      margin-top: 80px;
+    /* AI Agent Box */
+    .ai-agent {
+      background: #0f1624;
+      border-left: 4px solid #3a91ff;
+      padding: 30px 24px;
+      margin-top: 60px;
+      border-radius: 10px;
+      font-style: normal;
+      color: #b0b9c6;
     }
 
-    /* Optional Placeholder for a Future AI Bot */
-    .ai-agent {
-      background: #10161f;
-      border: 1px dashed #2a3545;
-      padding: 30px;
-      margin-top: 40px;
-      border-radius: 10px;
+    /* FOOTER */
+    footer {
       text-align: center;
-      color: #9fa9b9;
-      font-style: italic;
+      padding: 50px 0 30px;
+      font-size: 0.9rem;
+      color: #6e7a8a;
+      border-top: 1px solid #1a2230;
+      margin-top: 100px;
     }
   </style>
 </head>
@@ -156,34 +152,31 @@
 
   <header>
     <h1>Nawel ZAIT</h1>
-    <p class="subtitle">AI & Data Science – Institut Polytechnique de Paris</p>
-    <p class="intro">Final-year master's student seeking a 6-month internship and full-time position in Artificial Intelligence, Machine Learning, or Data Science.</p>
+    <p class="subtitle">AI & Data Science — Institut Polytechnique de Paris</p>
+    <p class="intro">Final-year master's student seeking a 6-month internship and full-time role in Artificial Intelligence, Machine Learning, or Data Science.</p>
   </header>
 
   <section>
     <h2>Selected Academic Projects</h2>
     <div class="projects">
       <div class="card">
-        <h3>Fine-Tuning a Small Language Model for Medical Text Summarization</h3>
-        <p>Fine-tuned an SLM to summarize French medical documents using LLM-generated synthetic data. Focused on semantic precision and domain-specific terminology.</p>
+        <h3>SLM Fine-Tuning for Medical Text Summarization</h3>
+        <p>Trained a small language model to summarize French medical documents using synthetic data from LLMs. Focused on semantic fidelity and domain-specific accuracy.</p>
         <p><a href="https://github.com/ineszait/medical-text-summarization" target="_blank">View on GitHub →</a></p>
       </div>
-
       <div class="card">
         <h3>Sub-Event Detection in FIFA World Cup Tweets</h3>
-        <p>Developed ML models to detect goals, red cards, and other events from tweet streams using GloVe embeddings and logistic regression.</p>
+        <p>Developed ML classifiers to detect real-time events like goals and red cards using GloVe embeddings and temporal segmentation.</p>
         <p><a href="https://github.com/ineszait/fifa-subevent-detection" target="_blank">View on GitHub →</a></p>
       </div>
-
       <div class="card">
         <h3>Text-to-SQL using Language Models</h3>
-        <p>Prompt-engineered LLMs to translate natural language queries into SQL. Benchmarked rule-based and neural methods on structured datasets.</p>
+        <p>Used prompt engineering to translate natural language to SQL. Benchmarked rule-based and LLM methods for structured querying.</p>
         <p><a href="https://github.com/ineszait/text-to-sql" target="_blank">View on GitHub →</a></p>
       </div>
-
       <div class="card">
         <h3>Reinforcement Learning for Quoridor AI</h3>
-        <p>Built agents with Minimax and MCTS. Introduced heuristics for path obstruction and improved strategic gameplay efficiency.</p>
+        <p>Built intelligent agents using Minimax and Monte Carlo Tree Search. Introduced heuristics for obstruction and strategic planning.</p>
         <p><a href="https://github.com/ineszait/quoridor-ai" target="_blank">View on GitHub →</a></p>
       </div>
     </div>
@@ -194,24 +187,23 @@
     <div class="projects">
       <div class="card">
         <h3>Neural Modeling of Screen-Induced Health Disruptions</h3>
-        <p>Bridged neuroscience and AI by modeling stress and cognitive changes from screen overexposure using Neural ODEs, LSTM, GRU on GLOBEM time-series data.</p>
+        <p>Bridged neuroscience and AI by predicting stress and cognitive changes from screen exposure using Neural ODEs, LSTMs, and GRUs on GLOBEM time-series data.</p>
         <p><a href="https://github.com/ineszait/screen-exposure-modeling" target="_blank">View on GitHub →</a></p>
       </div>
-
       <div class="card">
-        <h3>Adversarial Learning for Cryptographic Protocol Analysis</h3>
-        <p>Used adversarial ML techniques to probe cryptographic protocol weaknesses, generating adaptive attacks and enhancing resilience testing.</p>
+        <h3>Adversarial Learning for Cryptographic Protocols</h3>
+        <p>Applied adversarial techniques to evaluate the robustness of cryptographic protocols. Designed adaptive attacks to uncover structural weaknesses.</p>
         <p><a href="#" target="_blank">Coming soon</a></p>
       </div>
     </div>
   </section>
 
   <section class="ai-agent">
-    AI agent coming soon — exploring ways to integrate interactive models (chatbot, recommender, personal assistant).
+    Coming soon: an interactive AI agent powered by your own LLMs — chat, recommend, and guide visitors through your portfolio.
   </section>
 
   <footer>
-    © Nawel ZAIT · 2025
+    © Nawel ZAIT · 2025 — All rights reserved.
   </footer>
 
 </body>

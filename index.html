@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inès Zaït — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin: 60px 0 20px;
+      font-weight: 500;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 10px auto;
+      font-size: 1.05em;
+      color: #444;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .highlight {
+      color: #007acc;
+      font-weight: 600;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover { transform: translateY(-4px); }
+
+    .card h3 { margin-bottom: 10px; font-weight: 600; }
+    .card p { font-size: 0.95em; }
+
+    .contact {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Inès Zaït</h1>
+    <p>Étudiante en <span class="highlight">M1 IPP à l'École Polytechnique</span><br>
+    Passionnée par la <span class="highlight">cryptologie</span>, l’<span class="highlight">intelligence artificielle</span> et la <span class="highlight">recherche appliquée</span>.</p>
+  </header>
+
+  <section id="projects">
+    <h2>Projets</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>🔐 AES Diffusion Analysis</h3>
+        <p>Étude de la propriété de diffusion de l’AES à l’aide de tests bit-à-bit en C. Implémentation complète et analyse graphique.</p>
+        <p><a href="https://github.com/ineszait/AES-diffusion-analysis" target="_blank">Voir sur GitHub →</a></p>
+      </div>
+      <div class="card">
+        <h3>🧮 Quadratic Sieve</h3>
+        <p>Implémentation de l’algorithme de crible quadratique pour la factorisation de grands nombres semi-premiers (INF558).</p>
+        <p><a href="https://github.com/ineszait/Quadratic-Sieve" target="_blank">Voir sur GitHub →</a></p>
+      </div>
+      <div class="card">
+        <h3>🌲 Decision Tree from Scratch</h3>
+        <p>Implémentation d’un arbre de régression et étude des métriques de nœuds sur le jeu de données Boston Housing.</p>
+        <p><a href="https://github.com/ineszait/Decision-Tree-from-scratch" target="_blank">Voir sur GitHub →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>Parcours</h2>
+    <p>
+      🎓 Étudiante en M1 au sein du Programme Ingénieur Polytechnicien (IPP) à l’École Polytechnique.<br>
+      Intéressée par les domaines de la cryptographie, la sécurité des systèmes et le machine learning appliqué.
+    </p>
+    <p>
+      📄 <a href="CV_InesZait.pdf" target="_blank">Télécharger mon CV</a> (à placer dans le même dossier que ce fichier HTML)
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>📧 <a href="mailto:ines.zait@polytechnique.edu">ines.zait@polytechnique.edu</a></p>
+      <p>💼 <a href="https://www.linkedin.com/in/ines-zait/" target="_blank">LinkedIn</a> &nbsp; | &nbsp;
+      💻 <a href="https://github.com/ineszait" target="_blank">GitHub</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Inès Zaït — École Polytechnique
+  </footer>
+</body>
+</html>

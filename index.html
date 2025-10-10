@@ -9,12 +9,21 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Space Grotesk', sans-serif;
-      background-color: #0a0f1c;
+      background: linear-gradient(-45deg, #0a0f1c, #0f1a2c, #162442, #0a0f1c);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       color: #e2e6ec;
       line-height: 1.6;
       font-size: 16px;
       scroll-behavior: smooth;
     }
+    
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
     a {
       color: #59aaff;
       text-decoration: none;
@@ -243,7 +252,17 @@
       <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7366944/" target="_blank">“Plasticity and attention in the era of digital media”</a></li>
     </ul>
   </section>
+  
+<section>
+  <h2>Hackathon Experience</h2>
+  <div class="card">
+    <h3>AI for Social Good Hackathon</h3>
+    <p>Participated in a 48-hour hackathon focused on building AI solutions to improve public health awareness. Our team developed a chatbot that answers questions about mental health resources.</p>
+    <p><a href="https://hackathon-link.example" target="_blank">View Project →</a></p>
+  </div>
+</section>
 
+  
   <section class="contact">
     <h2>Contact</h2>
     <p>You can reach me via email: <a href="mailto:ton.email@example.com">zait.inesnawel@gmail.com</a></p>
@@ -264,45 +283,76 @@
   </footer>
 
   <script>
-    // Chatbot logic (placeholder). Remplace avec ton backend ou API.
-    const header = document.getElementById('chatbot-header');
-    const messagesDiv = document.getElementById('chatbot-messages');
-    const inputEl = document.getElementById('chatbot-text');
-    const sendBtn = document.getElementById('chatbot-send');
+const faq = [
+  {
+    question: "Quel est ton parcours ?",
+    answer: "Je suis étudiant en master AI & Data Science à l'Institut Polytechnique de Paris."
+  },
+  {
+    question: "As-tu fait des hackathons ?",
+    answer: "Oui, j’ai participé à un hackathon AI for Social Good où nous avons développé un chatbot santé mentale."
+  },
+  {
+    question: "Comment te contacter ?",
+    answer: "Tu peux m’envoyer un mail à zait.inesnawel@gmail.com ou me trouver sur LinkedIn."
+  },
+  {
+    question: "Quelles études tu as fait ?",
+    answer: "J'ai commencé par une licence MIASHS à Paris 1 panthéon sorbonne, puis une licence 3 MIAGE à dauphine et puis j'ai fais un master IA&Data à l'institut polytechnique de paris."
+  },
+  {
+    question: "Quel âge as tu ?",
+    answer: "J'ai 22 ans."
+  }
+];
 
-    let open = true;
-    header.onclick = () => {
-      open = !open;
-      document.getElementById('chatbot-container').style.height = open ? '400px' : '40px';
-    };
+const header = document.getElementById('chatbot-header');
+const messagesDiv = document.getElementById('chatbot-messages');
+const inputEl = document.getElementById('chatbot-text');
+const sendBtn = document.getElementById('chatbot-send');
 
-    sendBtn.onclick = async () => {
-      const text = inputEl.value.trim();
-      if (!text) return;
-      // afficher ton texte
-      const userMsg = document.createElement('div');
-      userMsg.textContent = "You: " + text;
-      messagesDiv.appendChild(userMsg);
-      inputEl.value = '';
-      // placeholder réponse
-      const botMsg = document.createElement('div');
-      botMsg.textContent = "Bot: Thinking...";
-      messagesDiv.appendChild(botMsg);
-      // ici tu ferais fetch vers ton API, ex :
-      /*
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ message: text })
-      });
-      const data = await res.json();
-      botMsg.textContent = "Bot: " + data.response;
-      */
-      // demo : après 1s, réponse fixe
-      setTimeout(() => {
-        botMsg.textContent = "Bot: Hi! I'm under development :)";
-      }, 1000);
-    };
+let open = true;
+header.onclick = () => {
+  open = !open;
+  document.getElementById('chatbot-container').style.height = open ? '400px' : '40px';
+};
+
+function findAnswer(input) {
+  input = input.toLowerCase();
+
+  for (const item of faq) {
+    const q = item.question.toLowerCase();
+    const words = q.split(' ');
+    const matched = words.every(w => input.includes(w));
+    if (matched) {
+      return item.answer;
+    }
+  }
+  return null;
+}
+
+sendBtn.onclick = () => {
+  const text = inputEl.value.trim();
+  if (!text) return;
+
+  // Affiche la question de l’utilisateur
+  const userMsg = document.createElement('div');
+  userMsg.textContent = "You: " + text;
+  messagesDiv.appendChild(userMsg);
+  inputEl.value = '';
+
+  // Cherche la réponse dans la FAQ
+  const answer = findAnswer(text);
+
+  const botMsg = document.createElement('div');
+  if (answer) {
+    botMsg.textContent = "Bot: " + answer;
+  } else {
+    botMsg.textContent = "Bot: Désolé, je n'ai pas compris ta question.";
+  }
+  messagesDiv.appendChild(botMsg);
+};
+
   </script>
 
 </body>
